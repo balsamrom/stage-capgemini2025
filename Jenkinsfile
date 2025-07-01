@@ -8,10 +8,6 @@ pipeline {
             }
         }
 
-        stage('Run Script') {
-            steps {
-                bat 'python hello.py'
-            }
-        }
+    
     }
 }
