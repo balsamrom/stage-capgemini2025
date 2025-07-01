@@ -8,6 +8,22 @@ pipeline {
             }
         }
 
+        stage('Run Script') {
+            steps {
+                bat 'python hello.py'
+            }
+        }
+    }
     
+    post {
+        success {
+            echo '✅ Build terminé avec succès !'
+        }
+        failure {
+            echo '❌ Échec du build ! Vérifiez les logs.'
+        }
+        always {
+            echo '📦 Pipeline terminé.'
+        }
     }
 }
